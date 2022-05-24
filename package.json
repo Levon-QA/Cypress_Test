@@ -1,0 +1,27 @@
+{
+  "name": "slide_cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:test": "npx cypress run --spec 'cypress/integration/functional_tests/*/*.spec.js'",
+    "cy:visual:test": "npx percy exec --config ./percy.conf.yml -- cypress run --spec 'cypress/integration/visual_tests/*.spec.js'",
+    "cy:report": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json & npx marge mochawesome.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@percy/cypress": "^2.3.4",
+    "cypress": "^7.3.0",
+    "cypress-file-upload": "^5.0.2",
+    "cypress-real-events": "^1.3.0",
+    "faker": "^5.4.0"
+  },
+  "devDependencies": {
+    "@percy/cli": "^1.0.0-beta.48",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
+  }
+}
